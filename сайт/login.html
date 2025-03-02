@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container fade-in">
+        <h1>Вход</h1>
+        <input type="email" id="loginEmail" placeholder="Введите email">
+        <input type="password" id="loginPassword" placeholder="Введите пароль">
+        <button class="animated-button" onclick="login()">Войти</button>
+        <p>Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+    </div>
+
+    <script>
+        function login() {
+            let email = document.getElementById("loginEmail").value;
+            if (localStorage.getItem("userEmail") === email) {
+                alert("Вход выполнен!");
+                window.location.href = "profile.html";
+            } else {
+                alert("Неверный email или пароль!");
+            }
+        }
+    </script>
+
+</body>
+</html>
